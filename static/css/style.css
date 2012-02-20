@@ -61,7 +61,7 @@ figcaption {
 }
 	
 body {
-  background: url(/images/exclusive_paper.png) fixed #f7f7f7;
+  background: url(../images/exclusive_paper.png) fixed #f7f7f7;
   font-family: "ff-scala-web", Georgia, serif;
   font-size: 1.188em;
   line-height: 1.5;
