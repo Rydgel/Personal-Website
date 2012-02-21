@@ -4,7 +4,7 @@ import os
 from flask import Flask
 from flask import render_template
 
-import utils
+from libs import utils
 app = Flask(__name__)
 
 
@@ -12,7 +12,13 @@ app = Flask(__name__)
 def index():
     """Main page"""
     entries = utils.getRSS('http://feeds2.feedburner.com/phollow/iuEO')
-    return render_template('index.html', entries=entries)
+    nb_followers = utils.getTwitterNbFollowers('phollow')
+    dribbble_shots = utils.getDribbbleShots('phollow')
+
+    return render_template('index.html', 
+                            entries=entries,
+                            nb_followers=nb_followers,
+                            dribbble_shots=dribbble_shots)
 
 
 """Bitch please."""

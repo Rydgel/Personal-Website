@@ -7,6 +7,8 @@ Werkzeug==0.8.3
 gunicorn==0.13.4
 feedparser==5.1
 pylibmc==1.2.2
+simplejson==2.3.2
+nose==1.1.2
 
 
 
