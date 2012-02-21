@@ -3,17 +3,16 @@ import os
 
 from flask import Flask
 from flask import render_template
+
+import utils
 app = Flask(__name__)
 
 
 @app.route('/')
 def index():
     """Main page"""
-    
-    return render_template('index.html')
-    
-
-
+    entries = utils.getRSS('http://feeds2.feedburner.com/phollow/iuEO')
+    return render_template('index.html', entries=entries)
 
 
 """Bitch please."""

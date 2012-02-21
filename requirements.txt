@@ -5,6 +5,8 @@ PyRSS2Gen==1.0.0
 Pygments==1.4
 Werkzeug==0.8.3
 gunicorn==0.13.4
+feedparser==5.1
+pylibmc==1.2.2
 
 
 
