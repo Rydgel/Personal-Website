@@ -15,6 +15,7 @@ def getRSS(blog_rss):
     try:
         if mc.get("rss"):
             entries = mc.get("rss")
+            print entries
         else:
             entries = feedparser.parse(blog_rss).entries
             mc.set("rss", entries, 3600)
