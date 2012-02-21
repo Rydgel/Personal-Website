@@ -1,19 +1,20 @@
 #!/usr/bin/env python
+
 import os
+from flask import Flask, render_template 
+from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
+from libs.caching import cached
 
-from flask import Flask
-from flask import render_template
-
-from libs import utils
 app = Flask(__name__)
 
 
 @app.route('/')
+#@cached(600, 'index')
 def index():
     """Main page"""
-    entries = utils.getRSS('http://feeds2.feedburner.com/phollow/iuEO')
-    nb_followers = utils.getTwitterNbFollowers('phollow')
-    dribbble_shots = utils.getDribbbleShots('phollow')
+    entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')
+    nb_followers = getTwitterNbFollowers('phollow')
+    dribbble_shots = getDribbbleShots('phollow')
 
     return render_template('index.html', 
                             entries=entries,
