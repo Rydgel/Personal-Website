@@ -28,58 +28,84 @@
 				<img src="{{ url_for('static', filename='images/logo.png') }}" alt="Jérôme Mahuet">
 			</a>
 		</h1>
-		<!--<div class="three columns" role="bio">
-			<span class="me"></span>
-		</div>-->
-		<span class="eleven columns top">Jérôme Mahuet—</span>
-		<span class="eleven columns">hack <em>&</em> design <em>since</em> 1986</span>
+		<div class="four columns top">
+			<p>Jérôme Mahuet—<br>
+			hack <em>&</em> design <em>since</em> 1986</p>
+	    </div>
+		<nav role="main-navigation" class="ten columns">
+	    	<ul>
+				<li>
+					<a href="http://phollow.fr" title="blog">
+						<span class="icon icon-blog"></span>
+						<span>Blog</span>
+					</a>
+				</li>
+				<li>
+					<a href="javascript:void(0);" title="Projects" class="disabled">
+						<span class="icon icon-projects"></span>
+						<span>Projects</span>
+					</a>
+			    </li>
+				<li>
+					<a href="/" title="About">
+						<span class="icon icon-about"></span>
+						<span>About</span>
+					</a>
+			    </li>
+			</ul>
+		</nav>
 	</header>
 	<section role="main" class="container">
 		<div class="nine columns">
 			<h2 class="first-heading">About me</h2>
+			<p>My name is <strong>Jérôme Mahuet</strong>, I am a twenty-five year old developer.</p>
+
+			<h2>Skills</h2>
+			<p>WAT?</p>
+
+			<h2>Latest articles</h2>
+			<p>I also write <em>often</em> about developers topics on my personnal web blog. Actually <em>mostly</em> about developers stuff. There is also some typographical goodness in it. But be warned, this is written in french.</p>
+			<ul role="articles-list">
+			{% for entry in entries %}
+			  <li><a target="_blank" title="{{ entry.title }}" href="{{ entry.feedburner_origlink }}">{{ entry.title }}</a></li>
+			{% endfor %}
+			</ul>
 			
-			<p><strong>Pellentesque habitant morbi tristique</strong> senectus et netus et malesuada fames ac turpis egestas. Vestibulum tortor quam, feugiat vitae, ultricies eget, tempor sit amet, ante. Donec eu libero sit amet quam egestas semper. <em>Aenean ultricies mi vitae est.</em> Mauris placerat eleifend leo. Quisque sit amet est et sapien ullamcorper pharetra. Vestibulum erat wisi, condimentum sed, ornare sit amet, wisi. Aenean fermentum, elit eget tincidunt condimentum, eros ipsum rutrum orci, sagittis tempus lacus enim ac dui. <a href="#">Donec non enim</a> in turpis pulvinar facilisis. Ut felis.</p>
-
-			<h2>Header Level 2</h2>
-
-			<ol>
-				<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-				<li>Aliquam tincidunt mauris eu risus.</li>
-			</ol>
-
-			<blockquote><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna. Cras in mi at felis aliquet congue. Ut a est eget ligula molestie gravida. Curabitur massa. Donec eleifend, libero at sagittis mollis, tellus est malesuada tellus, at luctus turpis elit sit amet quam. Vivamus pretium ornare est.</p></blockquote>
-
-			<h3>Header Level 3</h3>
-
-			<ul>
-				<li>Lorem ipsum dolor sit amet, consectetuer adipiscing elit.</li>
-				<li>Aliquam tincidunt mauris eu risus.</li>
-			</ul>
-  
-			<ul>
-				<li>Morbi in sem quis dui placerat ornare. Pellentesque odio nisi, euismod in, pharetra a, ultricies in, diam. Sed arcu. Cras consequat.</li>
-				<li>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</li>
-				<li>Phasellus ultrices nulla quis nibh. Quisque a lectus. Donec consectetuer ligula vulputate sem tristique cursus. Nam nulla quam, gravida non, commodo a, sodales sit amet, nisi.</li>
-				<li>Pellentesque fermentum dolor. Aliquam quam lectus, facilisis auctor, ultrices ut, elementum vulputate, nunc.</li>
-			</ul>
+			
 		</div>
 		<aside class="seven columns">
+			<p><img class="me" src="{{ url_for('static', filename='images/meh.jpg') }}" alt="Jérôme Mahuet"></p>
 			<h5>Colophon</h5>
 			<p>This internet web site was made on a <a href="http://apple.com/">Mac</a>, using <a href="http://www.panic.com/coda/">Coda</a>, <a href="http://www.panic.com/transmit/">Transmit</a>, <a href="http://iconfactory.com/software/xscope">xScope</a> and <a href="http://www.adobe.com/products/photoshop/photoshop/">Photoshop</a>. The site is powered by <a href="http://wordpress.org/">WordPress</a> while the <a href="http://shop.simplebits.com">shop</a> is powered by <a href="http://bigcartel.com">Big Cartel</a>.</p>
 			<p>Webfonts are served up via the wonderful <a href="http://typekit.com/colophons/1MKCHPG">Typekit</a>, and include FF Tisa, Proxima Nova, and Adobe Caslon Pro (for the fancy ampersand).</p>
 			<p>Latest <a href="http://dribbble.com">Dribbble</a> shots are pulled into the footer via <a href="http://www.mediahack.com/apps/half-court-shot">Half Court Shot</a>.</p>
+			
+			<h5>Latest Dribbble shots</h5>
+			<section role="dribbble-wrapper" class="clearfix">
+				{% for dribbble_shot in dribbble_shots %}
+					<a target="_blank" href="{{ dribbble_shot.url }}" title="{{ dribbble_shot.title }}">
+						<img class="dribbble-shot" src="{{ dribbble_shot.image_teaser_url }}" alt="{{ dribbble_shot.title }}">
+					</a>
+				{% endfor %}
+			</section>
 		</aside>
 	</section>
 	
 	<footer class="container" role="contentinfo">
-	  <nav class="sixteen columns" role="navigation">
+      <section role="footer-wrapper" class="twelve columns">
+	  <nav role="navigation">
 	  		<ul>
-	  			<li><a href="#">This is a link</a></li>
-	  			<li><a href="#">Active Link</a></li>
-	  			<li><a href="#">Lorem link</a></li>
+	  			<li><a href="/">Home</a></li>
+	  			<li><a href="http://phollow.fr">Blog</a></li>
+	  			<li><a href="http://twitter.com/phollow">Twitter ({{ nb_followers|number_format }} followers)</a></li>
 	  		</ul>
 	  	</nav>		
-	  	<p class="sixteen columns">Copyright © 2012 Jérôme Mahuet. All rights reserved.</p>
+	  	<p>Copyright © 2012 Jérôme Mahuet. All rights reserved.</p>
+	  </section>
+	  <section role="logo" class="four columns">
+		<img src="{{ url_for('static', filename='images/CSS3_Logo_50.png') }}" alt="CSS">
+		<img src="{{ url_for('static', filename='images/HTML5_Logo_50.png') }}" alt="HTML5">
+	  </section>
 	</footer>
 	
 </div>
@@ -92,10 +118,17 @@
 <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 <script>
-	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-	g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-	s.parentNode.insertBefore(g,s)}(document,'script'));
+  var _gauges = _gauges || [];
+  (function() {
+    var t   = document.createElement('script');
+    t.type  = 'text/javascript';
+    t.async = true;
+    t.id    = 'gauges-tracker';
+    t.setAttribute('data-site-id', '4f46125b613f5d3268000017');
+    t.src = '//secure.gaug.es/track.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(t, s);
+  })();
 </script>
 
 </body>

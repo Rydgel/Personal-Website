@@ -1,7 +1,9 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 import os
-from flask import Flask, render_template 
+from flask import Flask, render_template
+from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
 from libs.caching import cached
 
@@ -12,8 +14,8 @@ app = Flask(__name__)
 #@cached(600, 'index')
 def index():
     """Main page"""
-    entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')
-    nb_followers = getTwitterNbFollowers('phollow')
+    entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')     
+    nb_followers = getTwitterNbFollowers('phollow') 
     dribbble_shots = getDribbbleShots('phollow')
 
     return render_template('index.html', 
@@ -21,8 +23,6 @@ def index():
                             nb_followers=nb_followers,
                             dribbble_shots=dribbble_shots)
 
-
-"""Bitch please."""
 
 @app.route('/favicon.ico')
 def favicon():
@@ -50,11 +50,21 @@ def page_not_found(e):
 def add_header(response):
     """
     Add headers to both force latest IE rendering engine or Chrome Frame,
-    and also to cache the rendered page for 10 minutes.
+    and also to cache the rendered page for 5 minutes. Should be served by
+    Varnish servers.
     """
     response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
-    response.headers['Cache-Control'] = 'public, max-age=600'
+    response.headers['Cache-Control'] = 'public, max-age=300'
     return response
+
+
+@app.template_filter()
+def number_format(number):
+    """
+    Custom Jinja filter for adding a better number display, according
+    to the locale
+    """
+    return format_decimal(number, locale='en_US')
 
 
 if __name__ == '__main__':
