@@ -207,13 +207,14 @@ header[role="main-header"] p {
 
 header[role="main-header"] nav {
 	text-align: right;
+	float: right;
 }
 
 
 header[role="main-header"] nav ul {
 	height: 96px;
 	float:right;
-	width: 50%;
+	width: 100%;
 }
 
 header[role="main-header"] nav ul li {
