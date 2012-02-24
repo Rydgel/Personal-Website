@@ -182,11 +182,11 @@ header[role="main-header"] div[role="bio"] {
 }
 
 header[role="main-header"] a {
-  display: inline-block;
-  text-decoration: none;
+  	display: inline-block;
+  	text-decoration: none;
 	width: 110px;
 	height: 63px;
-  border: none;
+  	border: none;
 }
 
 header[role="main-header"] h1 {
@@ -199,10 +199,10 @@ header[role="main-header"] div.top {
 }
 
 header[role="main-header"] p {
-  display: inline-block;
+  	display: inline-block;
 	font-size: 0.875em;
 	color: rgba(0, 0, 0, 0.4);
-	padding-left: 20px;
+	padding-left: 30px;
 }
 
 header[role="main-header"] nav {
@@ -213,12 +213,14 @@ header[role="main-header"] nav {
 header[role="main-header"] nav ul {
 	height: 96px;
 	float:right;
+	width: 50%;
 }
 
 header[role="main-header"] nav ul li {
 	list-style: none;
 	float: left;
 	display: inline-block;
+	width: 33.33333%;
 }
 
 header[role="main-header"] nav a {
@@ -229,6 +231,7 @@ header[role="main-header"] nav a {
 	height: 100px;
 	text-align: center;
 	color : #3B3B3D;
+	width: auto;
 }
 
 header[role="main-header"] nav ul a:hover {
@@ -344,6 +347,11 @@ section[role="logo"] img {
 	  		text-align: center;
 		}
 		
+		header[role="main-header"] p {
+			padding-left: 0px;
+		}
+		
+		
 		header[role="main-header"] span {
 		  padding-left: 0;
 		}
@@ -373,11 +381,11 @@ section[role="logo"] img {
 		header[role="main-header"] nav ul {
 			float: none;
 			text-align: center;
-			
+			margin: 0 auto;
 		}
 		
 		header[role="main-header"] nav ul li {
-			float: none;
+			font-size: 0.875em;
 		}
 		
 		

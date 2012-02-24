@@ -28,11 +28,11 @@
 				<img src="{{ url_for('static', filename='images/logo.png') }}" alt="Jérôme Mahuet">
 			</a>
 		</h1>
-		<div class="four columns top">
+		<div class="five columns top">
 			<p>Jérôme Mahuet—<br>
 			hack <em>&</em> design <em>since</em> 1986</p>
 	    </div>
-		<nav role="main-navigation" class="ten columns">
+		<nav role="main-navigation" class="nine columns">
 	    	<ul>
 				<li>
 					<a href="http://phollow.fr" title="blog">
@@ -64,14 +64,12 @@
 			<p>WAT?</p>
 
 			<h2>Latest articles</h2>
-			<p>I also write <em>often</em> about developers topics on my personnal web blog. Actually <em>mostly</em> about developers stuff. There is also some typographical goodness in it. But be warned, this is written in french.</p>
+			<p>I also write <em>often</em> about developers topics on my personnal web blog. Actually <em>mostly</em> about developers stuff… There is also some typographical goodness in it. But be warned, this is written in french.</p>
 			<ul role="articles-list">
 			{% for entry in entries %}
 			  <li><a target="_blank" title="{{ entry.title }}" href="{{ entry.feedburner_origlink }}">{{ entry.title }}</a></li>
 			{% endfor %}
 			</ul>
-			
-			
 		</div>
 		<aside class="seven columns">
 			<p><img class="me" src="{{ url_for('static', filename='images/meh.jpg') }}" alt="Jérôme Mahuet"></p>
@@ -98,6 +96,7 @@
 	  			<li><a href="/">Home</a></li>
 	  			<li><a href="http://phollow.fr">Blog</a></li>
 	  			<li><a href="http://twitter.com/phollow">Twitter ({{ nb_followers|number_format }} followers)</a></li>
+				<li><a href="mailto:rydgel@phollow.fr">Email</a></li>
 	  		</ul>
 	  	</nav>		
 	  	<p>Copyright © 2012 Jérôme Mahuet. All rights reserved.</p>
