@@ -58,6 +58,7 @@
 	<section role="main" class="container">
 		<div class="nine columns">
 			<h2 class="first-heading">About me</h2>
+			<img class="me" src="{{ url_for('static', filename='images/meh.png') }}" alt="Jérôme Mahuet">
 			<p>My name is <strong>Jérôme Mahuet</strong>, I am a twenty-five year old developer.</p>
 
 			<h2>Skills</h2>
@@ -72,7 +73,6 @@
 			</ul>
 		</div>
 		<aside class="seven columns">
-			<p><img class="me" src="{{ url_for('static', filename='images/meh.jpg') }}" alt="Jérôme Mahuet"></p>
 			<h5>Colophon</h5>
 			<p>This internet web site was made on a <a href="http://apple.com/">Mac</a>, using <a href="http://www.panic.com/coda/">Coda</a>, <a href="http://www.panic.com/transmit/">Transmit</a>, <a href="http://iconfactory.com/software/xscope">xScope</a> and <a href="http://www.adobe.com/products/photoshop/photoshop/">Photoshop</a>. The site is powered by <a href="http://wordpress.org/">WordPress</a> while the <a href="http://shop.simplebits.com">shop</a> is powered by <a href="http://bigcartel.com">Big Cartel</a>.</p>
 			<p>Webfonts are served up via the wonderful <a href="http://typekit.com/colophons/1MKCHPG">Typekit</a>, and include FF Tisa, Proxima Nova, and Adobe Caslon Pro (for the fancy ampersand).</p>
@@ -86,6 +86,28 @@
 					</a>
 				{% endfor %}
 			</section>
+			
+			<h5>Social <em>&</em> contact links</h5>
+			<ul role="social-links">
+				<li>
+					<a role="twitter" href="http://twitter.com/phollow" target="_blank" title="@phollow"></a>
+				</li>
+				<li>
+					<a role="dribbble" href="http://dribbble.com/phollow" target="_blank" title="@phollow"></a>
+				</li>
+				<li>
+					<a role="facebook" href="http://facebook.com/rydgel" target="_blank" title="rydgel"></a>
+				</li>
+				<li>
+					<a role="instagram" href="http://statigr.am/rydgel" target="_blank" title="instagram rydgel"></a>
+				</li>
+				<li>
+					<a role="flickr" href="http://flickr.com/rydgel" target="_blank" title="flickr rydgel"></a>
+				</li>
+				<li>
+					<a role="mail" href="mailto:rydgel@phollow.fr" target="_blank" title="email rydgel"></a>
+				</li>
+			</ul>
 		</aside>
 	</section>
 	
