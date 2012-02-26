@@ -284,7 +284,7 @@ section[role="dribbble-wrapper"] a {
 	display: block;
 	float: left;
 	width: 32%;
-	height: 150px;
+	height: 113px;
 	margin-right: 1%;
 }
 
@@ -315,16 +315,16 @@ ul[role="social-links"] li a {
 }
 
 ul[role="social-links"] li a[role="twitter"] {
-	background: url(../images/social/social-twitter-off.png) no-repeat -6px 0;
+	background: url(../images/social/social-twitter-off.png) no-repeat -4px 0;
 }
 
 ul[role="social-links"] li a:hover[role="twitter"] {
-	background: url(../images/social/social-twitter-on.png) no-repeat -6px 2px;
+	background: url(../images/social/social-twitter-on.png) no-repeat -4px 2px;
 }
 
 ul[role="social-links"] li a[role="dribbble"] {
 	background: url(../images/social/social-dribbble-off.png) no-repeat;
-	margin-right: 6px;
+	margin-right: 4px;
 }
 
 ul[role="social-links"] li a:hover[role="dribbble"] {
@@ -333,7 +333,7 @@ ul[role="social-links"] li a:hover[role="dribbble"] {
 
 ul[role="social-links"] li a[role="facebook"] {
 	background: url(../images/social/social-facebook-off.png) no-repeat;
-	margin-right: 6px;
+	margin-right: 4px;
 }
 
 ul[role="social-links"] li a:hover[role="facebook"] {
@@ -342,7 +342,7 @@ ul[role="social-links"] li a:hover[role="facebook"] {
 
 ul[role="social-links"] li a[role="instagram"] {
 	background: url(../images/social/social-instagram-off.png) no-repeat;
-	margin-right: 6px;
+	margin-right: 4px;
 }
 
 ul[role="social-links"] li a:hover[role="instagram"] {
@@ -351,7 +351,7 @@ ul[role="social-links"] li a:hover[role="instagram"] {
 
 ul[role="social-links"] li a[role="flickr"] {
 	background: url(../images/social/social-flickr-off.png) no-repeat;
-	margin-right: 6px;
+	margin-right: 4px;
 }
 
 ul[role="social-links"] li a:hover[role="flickr"] {
@@ -360,7 +360,6 @@ ul[role="social-links"] li a:hover[role="flickr"] {
 
 ul[role="social-links"] li a[role="mail"] {
 	background: url(../images/social/social-mail-off.png) no-repeat;
-	margin-right: 6px;
 }
 
 ul[role="social-links"] li a:hover[role="mail"] {
