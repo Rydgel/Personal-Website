@@ -72,6 +72,6 @@ def number_format(number):
 if __name__ == '__main__':
     app.debug = True
     # Gzip
-    app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=6)
+    # app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=6)
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
