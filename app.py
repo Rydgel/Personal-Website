@@ -5,13 +5,14 @@ import os
 from flask import Flask, render_template
 from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
-from libs.caching import cached
+from libs.decorators import minified, cached
 
 app = Flask(__name__)
 
 
 @app.route('/')
-#@cached(600, 'index')
+#@cached(60, 'index')
+@minified
 def index():
     """Main page"""
     entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')     

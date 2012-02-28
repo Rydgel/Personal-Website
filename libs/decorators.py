@@ -3,16 +3,20 @@
 
 import os
 from functools import wraps
+from htmlmin.minify import html_minify
 from flask import request
 import pylibmc
 
 
-mc = pylibmc.Client(
-    servers=[os.environ.get('MEMCACHE_SERVERS', '127.0.0.1')],
-    username=os.environ.get('MEMCACHE_USERNAME', None),
-    password=os.environ.get('MEMCACHE_PASSWORD', None),
-    binary=True
-)
+def minified(f):
+    @wraps(f)
+    def minified_view(*args, **kwargs):
+        rv = f(*args, **kwargs)
+        if type(rv) == unicode:
+            return html_minify(rv.encode('utf-8'))
+        return rv
+    return minified_view
+
 
 
 def cached(timeout, cache_key):
@@ -20,6 +24,13 @@ def cached(timeout, cache_key):
     Oh hai I iz a wonderful decorator who checks the cache and return it
     otherwise execute dat parent function and put it into the cache. umad
     """
+    mc = pylibmc.Client(
+        servers=[os.environ.get('MEMCACHE_SERVERS', '127.0.0.1')],
+        username=os.environ.get('MEMCACHE_USERNAME', None),
+        password=os.environ.get('MEMCACHE_PASSWORD', None),
+        binary=True
+    )
+
     def decorator(f):
         @wraps(f)
         def decorated_function(*args, **kwargs):
