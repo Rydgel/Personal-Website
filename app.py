@@ -3,7 +3,8 @@
 
 import os
 from flask import Flask, render_template
-from middlewares.gzipper import Gzipper
+#from middlewares.gzipper import Gzipper
+from paste.gzipper import middleware as GzipMiddleware
 from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
 from libs.decorators import minified, cached
@@ -72,6 +73,7 @@ def number_format(number):
 if __name__ == '__main__':
     app.debug = True
     # Gzip
-    app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=5)
+    #app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=5)
+    app.wsgi_app = GzipMiddleware(app.wsgi_app, compress_level=6)
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)

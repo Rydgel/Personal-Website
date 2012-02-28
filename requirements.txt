@@ -12,3 +12,4 @@ pylibmc==1.2.2
 simplejson==2.3.2
 nose==1.1.2
 django-htmlmin==0.5.1
+Paste==1.7.5.1
