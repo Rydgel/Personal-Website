@@ -3,7 +3,7 @@
 
 import os
 from flask import Flask, render_template
-from middlewares.gzipper import Gzipper
+#from middlewares.gzipper import Gzipper
 from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
 from libs.decorators import minified, cached
@@ -71,7 +71,7 @@ def number_format(number):
 
 if __name__ == '__main__':
     app.debug = True
-    # Gzip
+    # Gzipping, not worth it on my free Heroku cedar
     # app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=6)
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
