@@ -3,6 +3,7 @@
 
 import os
 from flask import Flask, render_template
+from middlewares.gzipper import Gzipper
 from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
 from libs.decorators import minified, cached
@@ -12,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/')
 #@cached(60, 'index')
-@minified
+#@minified
 def index():
     """Main page"""
     entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')     
@@ -70,5 +71,7 @@ def number_format(number):
 
 if __name__ == '__main__':
     app.debug = True
+    # Gzip
+    app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=5)
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)
