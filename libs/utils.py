@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 import os
-from caching import cached
+from decorators import cached
 import simplejson as json
 import feedparser
 import urllib2
