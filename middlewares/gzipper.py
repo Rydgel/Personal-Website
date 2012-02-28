@@ -27,7 +27,7 @@
  
 """
 from gzip import GzipFile
-import StringIO
+import cStringIO
  
 __version__ = (1,0)
 __author__ = "Evan Fosmark "
@@ -36,7 +36,7 @@ def gzip_string(string, compression_level):
     """ The `gzip` module didn't provide a way to gzip just a string.
         Had to hack together this. I know, it isn't pretty.
     """
-    fake_file = StringIO.StringIO()
+    fake_file = cStringIO.StringIO()
     gz_file = GzipFile(None, 'wb', compression_level, fake_file)
     gz_file.write(string)
     gz_file.close()
