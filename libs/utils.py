@@ -15,6 +15,7 @@ def getRSS(blog_rss):
         return feedparser.parse(blog_rss).entries
                    
     except Exception, e:
+        print "RSS Exception"
         raise e
 
 
@@ -27,6 +28,7 @@ def getTwitterNbFollowers(username):
         return result['followers_count']
 
     except Exception, e:
+        print "Twitter Exception"
         raise e
         
 
@@ -39,4 +41,5 @@ def getDribbbleShots(username, count=3):
         return result['shots'][:count]
         
     except Exception, e:
+        print "Dribbble Exception"
         raise e

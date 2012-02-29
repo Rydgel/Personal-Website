@@ -3,14 +3,14 @@
 
 
 /* TEAM */
-  Mister: Jérôme Mahuet
-  Site: http://jeromemahuet.com
+  Mr: Jérôme Mahuet
+  Site: http://jrm.li
   Twitter: http://twitter.com/phollow
   Location: Limoges, France
 
 /* SITE */
   Standards: HTML5, CSS3
-  Components: Modernizr, jQuery
+  Components: Modernizr
   Software: TextMate 2
 
 
