@@ -8,6 +8,8 @@ from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
 from libs.decorators import minified, cached
 
+import logging, sys
+
 app = Flask(__name__)
 
 
@@ -75,4 +77,9 @@ if __name__ == '__main__':
     # Cloudflare will do it for me.
     # app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=6)
     port = int(os.environ.get('PORT', 5000))
+    # logging
+    if not app.debug: 
+        handler = logging.StreamHandler(sys.__stdout__) 
+        handler.setLevel(logging.INFO) 
+        app.logger.addHandler(handler)
     app.run(host='0.0.0.0', port=port)
