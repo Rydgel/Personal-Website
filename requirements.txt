@@ -14,3 +14,4 @@ nose==1.1.2
 django-htmlmin==0.5.1
 raven>=1.4.6
 blinker
+newrelic
