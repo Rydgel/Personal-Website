@@ -81,6 +81,7 @@ if __name__ == '__main__':
         handler.setLevel(logging.INFO)
         app.logger.addHandler(handler)
         
+        app.config['SENTRY_DSN'] = os.environ.get('SENTRY_DSN', '0')
         sentry = Sentry(app)
         
     app.run(host='0.0.0.0', port=port)
