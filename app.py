@@ -3,6 +3,7 @@
 
 import os
 from flask import Flask, render_template
+from raven.contrib.flask import Sentry
 #from middlewares.gzipper import Gzipper
 from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
@@ -79,4 +80,6 @@ if __name__ == '__main__':
         handler = logging.StreamHandler(sys.__stdout__) 
         handler.setLevel(logging.INFO) 
         app.logger.addHandler(handler)
+        sentry = Sentry(app)
+        
     app.run(host='0.0.0.0', port=port)
