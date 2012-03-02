@@ -16,7 +16,7 @@ def getRSS(blog_rss):
                    
     except Exception, e:
         print "RSS Exception"
-        raise e
+        return None
 
 
 @cached(600, 'twitter')
@@ -29,7 +29,7 @@ def getTwitterNbFollowers(username):
 
     except Exception, e:
         print "Twitter Exception"
-        raise e
+        return 0
         
 
 @cached(3600, 'dribbble')
@@ -42,4 +42,4 @@ def getDribbbleShots(username, count=3):
         
     except Exception, e:
         print "Dribbble Exception"
-        raise e
+        return None

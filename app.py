@@ -22,10 +22,7 @@ def index():
     nb_followers = getTwitterNbFollowers('phollow') 
     dribbble_shots = getDribbbleShots('phollow')
 
-    return render_template('index.html', 
-                            entries=entries,
-                            nb_followers=nb_followers,
-                            dribbble_shots=dribbble_shots)
+    return render_template('index.html', **locals())
 
 
 @app.route('/favicon.ico')
@@ -72,7 +69,7 @@ def number_format(number):
 
 
 if __name__ == '__main__':
-    # app.debug = True
+    app.debug = True
     # Gzipping, not worth it on my free Heroku cedar
     # Cloudflare will do it for me.
     # app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=6)

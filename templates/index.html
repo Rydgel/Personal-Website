@@ -64,6 +64,7 @@
 			<h2>Skills</h2>
 			<p>WAT?</p>
 
+			{% if entries %}
 			<h2>Latest articles</h2>
 			<p>I also write <em>often</em> about developers topics on my personnal web blog. Actually <em>mostly</em> about developers stuff… There is also some typographical goodness in it. But be warned, this is written in french.</p>
 			<ul role="articles-list">
@@ -71,13 +72,15 @@
 			  <li><a target="_blank" title="{{ entry.title }}" href="{{ entry.feedburner_origlink }}">{{ entry.title }}</a></li>
 			{% endfor %}
 			</ul>
+			{% endif %}
 		</div>
 		<aside class="seven columns">
 			<h5>Colophon</h5>
 			<p>This internet web site was made on a <a href="http://apple.com/">Mac</a>, using <a href="http://www.panic.com/coda/">Coda</a>, <a href="http://www.panic.com/transmit/">Transmit</a>, <a href="http://iconfactory.com/software/xscope">xScope</a> and <a href="http://www.adobe.com/products/photoshop/photoshop/">Photoshop</a>. The site is powered by <a href="http://wordpress.org/">WordPress</a> while the <a href="http://shop.simplebits.com">shop</a> is powered by <a href="http://bigcartel.com">Big Cartel</a>.</p>
 			<p>Webfonts are served up via the wonderful <a href="http://typekit.com/colophons/1MKCHPG">Typekit</a>, and include FF Tisa, Proxima Nova, and Adobe Caslon Pro (for the fancy ampersand).</p>
 			<p>Latest <a href="http://dribbble.com">Dribbble</a> shots are pulled into the footer via <a href="http://www.mediahack.com/apps/half-court-shot">Half Court Shot</a>.</p>
-			
+
+			{% if dribbble_shots %}
 			<h5>Latest Dribbble shots</h5>
 			<section role="dribbble-wrapper" class="clearfix">
 				{% for dribbble_shot in dribbble_shots %}
@@ -86,7 +89,7 @@
 					</a>
 				{% endfor %}
 			</section>
-			
+			{% endif %}
 			<h5>Social <em>&</em> contact links</h5>
 			<ul role="social-links">
 				<li>
@@ -117,7 +120,11 @@
 	  		<ul>
 	  			<li><a href="/">Home</a></li>
 	  			<li><a href="http://phollow.fr">Blog</a></li>
-	  			<li><a href="http://twitter.com/phollow">Twitter ({{ nb_followers|number_format }} followers)</a></li>
+	  			<li>
+					<a href="http://twitter.com/phollow">
+					Twitter {% if nb_followers %} ({{nb_followers|number_format}}  followers){% endif %}
+					</a>
+				</li>
 				<li><a href="mailto:rydgel@phollow.fr">Email</a></li>
 	  		</ul>
 	  	</nav>		
