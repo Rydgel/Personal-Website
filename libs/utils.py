@@ -12,7 +12,7 @@ import urllib2
 def getRSS(blog_rss):
     """We take all the RSS entries and we put them in memcache for 1 hour"""
     try:
-        return feedparser.parse(blog_rss).entries
+        return feedparser.parse(blog_rss).entries[:5]
                    
     except Exception, e:
         print "RSS Exception"

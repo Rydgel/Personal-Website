@@ -29,7 +29,7 @@
 			</a>
 		</h1>
 		<div class="five columns top">
-			<p>Jérôme Mahuet—<br>
+			<p>Jérôme Mahuet —<br>
 			hack <em>&</em> design <em>since</em> 1986</p>
 		</div>
 		<nav role="main-navigation" class="five columns">
@@ -56,14 +56,39 @@
 		</nav>
 	</header>
 	<section role="main" class="container">
-		<article class="nine columns">
+		<article class="ten columns">
 			<h2 class="first-heading">About me</h2>
 			<img class="me" src="{{ url_for('static', filename='images/meh.png') }}" alt="Jérôme Mahuet">
-			<p>My name is <strong>Jérôme Mahuet</strong>, I am a twenty-five year old developer. </p>
+			<p>My name is <strong>Jérôme Mahuet</strong>, I am a twenty-five year old developer with sharp design sensibilities. I sit on the fence of both worlds. I’m the kind of guy who learns everything by himself, and each project is a way to push further my knowledge. I’m currently living in Limoges, France. When offline I like photography, reading and playing video-games. What a <strong>nerd</strong> indeed.<br>Oh… and I <em>hate</em> when a designer put Lobster everywhere.</p>
 
 			<h2>Skills</h2>
-			<p>WAT?</p>
-
+			<p>
+			<h6>HTML5 / CSS3 / Javascript</h6>
+			<span class="progress-bar blue stripes">
+				<span style="width: 90%"></span>
+			</span>
+			<h6>PHP</h6>
+			<span class="progress-bar blue stripes">
+				<span style="width: 100%"></span>
+			</span>
+			<h6>Python</h6>
+			<span class="progress-bar blue stripes">
+				<span style="width: 80%"></span>
+			</span>
+			<h6>Ruby</h6>
+			<span class="progress-bar blue stripes">
+				<span style="width: 60%"></span>
+			</span>
+			<h6>Objective-C</h6>
+			<span class="progress-bar blue stripes">
+				<span style="width: 80%"></span>
+			</span>
+			<h6>Photoshop</h6>
+			<span class="progress-bar blue stripes">
+				<span style="width: 60%"></span>
+			</span>
+			</p>
+			
 			{% if entries %}
 			<h2>Latest articles</h2>
 			<p>I also write <em>often</em> about developers topics on my personnal web blog. Actually <em>mostly</em> about developers stuff… There is also some typographical goodness in it. But be warned, this is written in french.</p>
@@ -74,10 +99,9 @@
 			</ul>
 			{% endif %}
 		</article>
-		<aside class="seven columns">
+		<aside class="six columns">
 			<h5>About this website</h5>
-			<p>This site was made on a <a href="http://www.apple.com" title="Apple">Mac</a>, designed in browser and <a href="http://www.adobe.com/fr/products/photoshop.html" title="Photoshop">Photoshop</a> (for the fancy logos).</p>
-			<p>It is powered by <a href="http://python.org/" title="Python">Python</a> and the <a href="http://flask.pocoo.org/" title="Flask">Flask</a> micro-framework. Edited with <a href="http://macromates.com/" title="TextMate">TextMate 2</a>. The source code is hosted on <a href="" title="Github">Github</a>, take a look if you want to.</p>
+			<p>This site was made on a <a href="http://www.apple.com" title="Apple">Mac</a>, designed in browser and <a href="http://www.adobe.com/fr/products/photoshop.html" title="Photoshop">Photoshop</a> (for the fancy logos). Responsive theme by yours truly. Versionned with <a href="http://git-scm.com/" title="Git">Git</a>.<br>It is powered by <a href="http://python.org/" title="Python">Python</a> and the <a href="http://flask.pocoo.org/" title="Flask">Flask</a> micro-framework. Edited with <a href="http://macromates.com/" title="TextMate">TextMate 2</a>. The source code is hosted on <a href="" title="Github">Github</a>, take a look.</p>
 			<h5>Hosting</h5>
 			<p>Everything is hosted painlessly on a cloud platform called <a href="http://www.heroku.com/" title="Heroku">Heroku</a> (pronounced her-OH-koo). It’s a fun way of building and deploying web apps.</p>
 			<h5>Fonts</h5>
@@ -126,13 +150,12 @@
 	  			<li><a href="http://phollow.fr">Blog</a></li>
 	  			<li>
 					<a href="http://twitter.com/phollow">
-					Twitter {% if nb_followers %} ({{nb_followers|number_format}}  followers){% endif %}
+					Follow me {% if nb_followers %}– {{nb_followers|number_format}}{% endif %}
 					</a>
 				</li>
-				<li><a href="mailto:rydgel@phollow.fr">Email</a></li>
 	  		</ul>
 	  	</nav>		
-	  	<p>Copyright © 2012 Jérôme Mahuet. All rights reserved.</p>
+	  	<p>© 2012 Jérôme Mahuet, built with love.</p>
 	  </section>
 	  <section role="logo" class="four columns">
 		<img src="{{ url_for('static', filename='images/CSS3_Logo_50.png') }}" alt="CSS">
