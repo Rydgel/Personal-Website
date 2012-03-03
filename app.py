@@ -78,10 +78,11 @@ if __name__ == '__main__':
     # logging
     if not app.debug: 
         handler = logging.StreamHandler(sys.stdout)
-        handler.setLevel(logging.INFO)
+        handler.setLevel(logging.WARNING)
         app.logger.addHandler(handler)
-        
-        app.config['SENTRY_DSN'] = os.environ.get('SENTRY_DSN', '0')
-        sentry = Sentry(app)
+        # Sentry
+        if os.environ.get('SENTRY_DSN') is not None:
+            app.config['SENTRY_DSN'] = os.environ.get('SENTRY_DSN')
+            sentry = Sentry(app)
         
     app.run(host='0.0.0.0', port=port)

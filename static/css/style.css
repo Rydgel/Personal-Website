@@ -68,7 +68,7 @@ figcaption {
 	
 body {
   background: url(../images/exclusive_paper.jpg) fixed #f7f7f7;
-  font-family: "ff-scala-web", Georgia, serif;
+  font-family: "ff-quadraat-web", Georgia, serif;
   font-size: 1.188em;
   line-height: 1.5;
   color: #3b3b3d;
@@ -77,21 +77,21 @@ body {
 
 div[role="wrapper"] {
 	background: rgba(255, 255, 255, 0.6);
-	/*border-radius: 8px;*/
-	/*margin: 40px auto 20px auto;*/
-	/*border: 1px solid rgba(0, 0, 0, 0.1);*/
 	box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
-	/*box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);*/
 	padding: 1%;
 }
 
 p {
 	margin-bottom: 1.5em;
 	margin-top: 0;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	hyphens: auto;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-weight: bold;
+	font-style: italic;
 }
 
 h1 {
@@ -271,6 +271,14 @@ section[role="main"] {
 	padding-top: 30px;
 }
 
+section[role="main"] article {
+	padding-right: 0.5%;
+}
+
+section[role="main"] aside {
+	padding-left: 0.5%;
+}
+
 ul[role="articles-list"] {
 	padding: 0 0 0 20px;
 	list-style: square;
@@ -283,9 +291,12 @@ ul[role="articles-list"] li {
 section[role="dribbble-wrapper"] a {
 	display: block;
 	float: left;
-	width: 32%;
-	height: 113px;
-	margin-right: 1%;
+	width: 45%;
+	height: 180px;
+}
+
+section[role="dribbble-wrapper"] a:last-child {
+ 	float: right;
 }
 
 .dribbble-shot {
@@ -437,10 +448,6 @@ section[role="logo"] img {
 			display: none;
 		}
 		
-		.me {
-			/*display: none;*/
-		}
-		
 		footer[role="contentinfo"] {
 			margin-bottom: 40px;
 		}
@@ -459,6 +466,15 @@ section[role="logo"] img {
 		header[role="main-header"] nav ul li {
 			font-size: 0.875em;
 		}
+		
+		section[role="main"] article {
+			padding-right: 0;
+		}
+
+		section[role="main"] aside {
+			padding-left: 0;
+		}
+		
 		
 		
 	}
