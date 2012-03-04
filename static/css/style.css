@@ -324,58 +324,59 @@ ul[role="social-links"] li a {
 	display: block;
 	width: 48px;
 	height: 48px;
+	background: url(../images/social/social-sprite.png) no-repeat top left;
 }
 
 ul[role="social-links"] li a[role="twitter"] {
-	background: url(../images/social/social-twitter-off.png) no-repeat -4px 0;
+	background-position: -5px -983px; width: 48px; height: 47px;
 }
 
 ul[role="social-links"] li a:hover[role="twitter"] {
-	background: url(../images/social/social-twitter-on.png) no-repeat -4px 2px;
+	background-position: -5px -1078px; width: 48px; height: 47px;
 }
 
 ul[role="social-links"] li a[role="dribbble"] {
-	background: url(../images/social/social-dribbble-off.png) no-repeat;
+	background-position: 0 0; width: 48px; height: 48px;
 	margin-right: 4px;
 }
 
 ul[role="social-links"] li a:hover[role="dribbble"] {
-	background: url(../images/social/social-dribbble-on.png) no-repeat;
+	background-position: 0 -98px; width: 48px; height: 49px;
 }
 
 ul[role="social-links"] li a[role="facebook"] {
-	background: url(../images/social/social-facebook-off.png) no-repeat;
+	background-position: 0 -197px; width: 48px; height: 48px;
 	margin-right: 4px;
 }
 
 ul[role="social-links"] li a:hover[role="facebook"] {
-	background: url(../images/social/social-facebook-on.png) no-repeat;
+	background-position: 0 -295px; width: 48px; height: 49px;
 }
 
 ul[role="social-links"] li a[role="instagram"] {
-	background: url(../images/social/social-instagram-off.png) no-repeat;
+	background-position: 0 -590px; width: 48px; height: 47px;
 	margin-right: 4px;
 }
 
 ul[role="social-links"] li a:hover[role="instagram"] {
-	background: url(../images/social/social-instagram-on.png) no-repeat 0 2px;
+	background-position: 0 -685px; width: 48px; height: 48px;
 }
 
 ul[role="social-links"] li a[role="flickr"] {
-	background: url(../images/social/social-flickr-off.png) no-repeat;
+	background-position: 0 -394px; width: 48px; height: 48px;
 	margin-right: 4px;
 }
 
 ul[role="social-links"] li a:hover[role="flickr"] {
-	background: url(../images/social/social-flickr-on.png) no-repeat 0 2px;
+	background-position: 0 -490px; width: 48px; height: 48px;
 }
 
 ul[role="social-links"] li a[role="mail"] {
-	background: url(../images/social/social-mail-off.png) no-repeat;
+	background-position: 0 -785px; width: 48px; height: 49px;
 }
 
 ul[role="social-links"] li a:hover[role="mail"] {
-	background: url(../images/social/social-mail-on.png) no-repeat;
+	background-position: 0 -884px; width: 48px; height: 49px;
 }
 
 
