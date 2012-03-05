@@ -292,12 +292,8 @@ ul[role="articles-list"] li {
 section[role="dribbble-wrapper"] a {
 	display: block;
 	float: left;
-	width: 45%;
-	height: 130px;
-}
-
-section[role="dribbble-wrapper"] a:last-child {
- 	float: right;
+	width: 100%;
+	height: 157px;
 }
 
 .dribbble-shot {

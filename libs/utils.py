@@ -33,7 +33,7 @@ def getTwitterNbFollowers(username):
         
 
 @cached(3600, 'dribbble')
-def getDribbbleShots(username, count=2):
+def getDribbbleShots(username, count=1):
     """Retrieve last Dribbble shots, then again memcache its ass off"""
     try:
         url = 'http://api.dribbble.com/players/' + username + '/shots'
