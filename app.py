@@ -21,7 +21,7 @@ def index():
     """Main page"""
     entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')     
     nb_followers = getTwitterNbFollowers('phollow') 
-    dribbble_shots = getDribbbleShots('phollow')
+    dribbble_shots = getDribbbleShots('phollow')  
 
     return render_template('index.html', **locals())
 
