@@ -18,7 +18,6 @@ def minified(f):
     return minified_view
 
 
-
 def cached(timeout, cache_key):
     """
     Oh hai I iz a wonderful decorator who checks the cache and return it
@@ -34,11 +33,16 @@ def cached(timeout, cache_key):
     def decorator(f):
         @wraps(f)
         def decorated_function(*args, **kwargs):
-            rv = mc.get(cache_key)
-            if rv is not None:
+            try:
+                rv = mc.get(cache_key)
+                if rv is not None:
+                    return rv
+                rv = f(*args, **kwargs)
+                mc.set(cache_key, rv, timeout)
                 return rv
-            rv = f(*args, **kwargs)
-            mc.set(cache_key, rv, timeout)
-            return rv
+            except Exception, e:
+                # if memcached is not available/crashed
+                # make it works without caching
+                return f(*args, **kwargs)
         return decorated_function
     return decorator
