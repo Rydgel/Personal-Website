@@ -2,6 +2,8 @@
 # -*- coding: utf-8 -*-
 
 import os
+import logging
+import sys
 from flask import Flask, render_template
 from raven.contrib.flask import Sentry
 #from middlewares.gzipper import Gzipper
@@ -9,7 +11,6 @@ from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
 from libs.decorators import minified, cached
 
-import logging, sys
 
 app = Flask(__name__)
 
@@ -19,9 +20,9 @@ app = Flask(__name__)
 #@minified
 def index():
     """Main page"""
-    entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')     
-    nb_followers = getTwitterNbFollowers('phollow') 
-    dribbble_shots = getDribbbleShots('phollow')  
+    entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')
+    nb_followers = getTwitterNbFollowers('phollow')
+    dribbble_shots = getDribbbleShots('phollow')
 
     return render_template('index.html', **locals())
 
@@ -30,12 +31,14 @@ def index():
 def favicon():
     return app.send_static_file('favicon.ico')
 
+
 @app.route('/apple-touch-icon.png')
 @app.route('/apple-touch-icon<format>.png')
 def apple_touch(format=""):
     """Shitty logo Apple"""
     file = 'apple-touch-icon' + format + '.png'
     return app.send_static_file(file)
+
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):
@@ -47,7 +50,8 @@ def send_text_file(file_name):
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('404.html'), 404
-    
+
+
 @app.after_request
 def add_header(response):
     """
@@ -76,7 +80,7 @@ if __name__ == '__main__':
     # app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=6)
     port = int(os.environ.get('PORT', 5000))
     # logging
-    if not app.debug: 
+    if not app.debug:
         handler = logging.StreamHandler(sys.stdout)
         handler.setLevel(logging.WARNING)
         app.logger.addHandler(handler)
@@ -84,5 +88,5 @@ if __name__ == '__main__':
         if os.environ.get('SENTRY_DSN') is not None:
             app.config['SENTRY_DSN'] = os.environ.get('SENTRY_DSN')
             sentry = Sentry(app)
-        
+
     app.run(host='0.0.0.0', port=port)

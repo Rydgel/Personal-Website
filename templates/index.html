@@ -1,8 +1,8 @@
 <!doctype html>
-<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
-<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
-<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -18,7 +18,14 @@
 	<script src="{{ url_for('static', filename='js/libs/modernizr.min.js') }}"></script>
 </head>
 <body>
-<!--[if lt IE 7]><p class=chromeframe>Your browser is <em>ancient!</em> <a href="http://browsehappy.com/">Upgrade to a newer browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to experience this site.</p><![endif]-->
+<!--[if lt IE 7]>
+<p class=chromeframe>Your browser is <em>ancient!</em> 
+	<a href="http://browsehappy.com/">Upgrade to a newer browser</a> or 
+	<a href="http://www.google.com/chromeframe/?redirect=true">
+		install Google Chrome Frame
+	</a> to experience this site.
+</p>
+<![endif]-->
 <div class="container" role="wrapper">
 	<header class="container" role="main-header">
 		<h1 class="two columns">
@@ -57,7 +64,15 @@
 		<article class="ten columns">
 			<h2 class="first-heading">About me</h2>
 			<img class="me" src="{{ url_for('static', filename='images/meh.png') }}" alt="Jérôme Mahuet">
-			<p>My name is <strong>Jérôme Mahuet</strong>, I am a twenty-five year-old developer with sharp design sensibilities. I sit on the fence of both worlds. I’m the kind of guy who learns everything by himself, and each project is a way to push further my knowledge. I’m currently living in Limoges, France. When offline I like photography, reading and playing video games. What a <strong>nerd</strong> indeed.<br>Oh… and I <em>hate</em> when a designer put Lobster everywhere.</p>
+			<p>My name is <strong>Jérôme Mahuet</strong>, I am a twenty-five 
+				year-old developer with sharp design sensibilities. I sit on the
+				 fence of both worlds. I’m the kind of guy who learns everything
+				  by himself, and each project is a way to push further my 
+				  knowledge. I’m currently living in Limoges, France. 
+				  When offline I like photography, reading and playing video 
+				  games. What a <strong>nerd</strong> indeed.<br>
+				  Oh… and I <em>hate</em> when a designer put Lobster everywhere.
+			</p>
 
 			<h2>Skills</h2>
 			<p>
@@ -89,21 +104,63 @@
 			
 			{% if entries %}
 			<h2>Latest articles</h2>
-			<p>I also write <em>often</em> about developer topics on my personal web blog. Actually <em>mostly</em> about developer stuff… There is also some typographical goodness in it. But be warned, this is written in French.</p>
+			<p>I also write <em>often</em> about developer topics on my 
+				personal web blog. Actually <em>mostly</em> about developer 
+				stuff… There is also some typographical goodness in it. 
+				But be warned, this is written in French.
+			</p>
 			<ul role="articles-list">
 			{% for entry in entries %}
-			  <li><a target="_blank" title="{{ entry.title }}" href="{{ entry.feedburner_origlink }}">{{ entry.title }}</a></li>
+			  <li>
+			  	<a target="_blank" 
+			  	title="{{ entry.title }}" 
+			  	href="{{ entry.feedburner_origlink }}">
+			  		{{ entry.title }}
+			  	</a>
+			  </li>
 			{% endfor %}
 			</ul>
 			{% endif %}
 		</article>
 		<aside class="six columns">
 			<h5>About this website</h5>
-			<p>This site was made on a <a href="http://www.apple.com" title="Apple">Mac</a>, designed in browser and <a href="http://www.adobe.com/products/photoshop.html" title="Photoshop">Photoshop</a> (for the fancy logos). Responsive theme by yours truly. Versioned with <a href="http://git-scm.com/" title="Git">Git</a>.<br>It is powered by <a href="http://python.org/" title="Python">Python</a> and the <a href="http://flask.pocoo.org/" title="Flask">Flask</a> micro-framework. Edited with <a href="http://macromates.com/" title="TextMate">TextMate 2</a>. The source code is hosted on <a href="https://github.com/Rydgel/Personal-Website" title="Github">Github</a>, take a look.</p>
+			<p>
+This site was made on a <a href="http://www.apple.com" title="Apple">Mac</a>, 
+designed in browser and 
+<a href="http://www.adobe.com/" title="Photoshop">Photoshop</a> 
+(for the fancy logos). Responsive theme by yours truly. Versioned with 
+<a href="http://git-scm.com/" title="Git">Git</a>. 
+It is powered by <a href="http://python.org/" title="Python">Python</a> and the 
+<a href="http://flask.pocoo.org/" title="Flask">Flask</a> micro-framework. 
+Edited with <a href="http://macromates.com/" title="TextMate">TextMate 2</a>. 
+The source code is hosted on 
+<a href="https://github.com/Rydgel/Personal-Website" title="Github">Github</a>, 
+take a look.
+			</p>
+
 			<h5>Hosting</h5>
-			<p>Everything is hosted painlessly on a cloud platform called <a href="http://www.heroku.com/" title="Heroku">Heroku</a> (pronounced her-OH-koo). It’s a fun way of building and deploying web apps.</p>
+			<p>
+				Everything is hosted painlessly on a cloud platform called 
+				<a href="http://www.heroku.com/" title="Heroku">Heroku</a> 
+				(pronounced her-OH-koo). It’s a fun way of building and 
+				deploying web apps.
+			</p>
+
 			<h5>Fonts</h5>
-			<p>All fonts are served up by the wonderful <a href="http://typekit.com/" title="Typekit">Typekit</a>. Body copy is the awesome <a href="http://www.fontshop.com/fonts/downloads/fontfont/ff_quadraat_web/" title="FF Quadraat Web">FF Quadraat Web</a> by <a href="http://typedia.com/explore/designer/fred-smeijers/" title="Fred Smeijers">Fred Smeijers</a>.</p>
+			<p>
+				All fonts are served up by the wonderful 
+				<a href="http://typekit.com/" title="Typekit">Typekit</a>. 
+				Body copy is the awesome <a 
+				href="http://www.fontshop.com/fonts/downloads/fontfont/ff_quadraat_web/" 
+				title="FF Quadraat Web">
+					FF Quadraat Web
+				</a> by 
+				<a 
+					href="http://typedia.com/explore/designer/fred-smeijers/" 
+					title="Fred Smeijers">
+					Fred Smeijers
+				</a>.
+			</p>
 			
 
 			{% if dribbble_shots %}
@@ -111,7 +168,9 @@
 			<section role="dribbble-wrapper" class="clearfix">
 				{% for dribbble_shot in dribbble_shots %}
 					<a target="_blank" href="{{ dribbble_shot.url }}" title="{{ dribbble_shot.title }}">
-						<img class="dribbble-shot" src="{{ dribbble_shot.image_teaser_url }}" alt="{{ dribbble_shot.title }}">
+						<img class="dribbble-shot" 
+						src="{{ dribbble_shot.image_teaser_url }}" 
+						alt="{{ dribbble_shot.title }}">
 					</a>
 				{% endfor %}
 			</section>
@@ -119,22 +178,34 @@
 			<h5>Social <em>&amp;</em> contact links</h5>
 			<ul role="social-links">
 				<li>
-					<a role="twitter" href="http://twitter.com/phollow" target="_blank" title="@phollow"></a>
+					<a role="twitter" 
+					href="http://twitter.com/phollow" target="_blank" 
+					title="@phollow"></a>
 				</li>
 				<li>
-					<a role="dribbble" href="http://dribbble.com/phollow" target="_blank" title="@phollow"></a>
+					<a role="dribbble" 
+					href="http://dribbble.com/phollow" target="_blank" 
+					title="@phollow"></a>
 				</li>
 				<li>
-					<a role="facebook" href="http://facebook.com/rydgel" target="_blank" title="rydgel"></a>
+					<a role="facebook" 
+					href="http://facebook.com/rydgel" target="_blank" 
+					title="rydgel"></a>
 				</li>
 				<li>
-					<a role="instagram" href="http://statigr.am/rydgel" target="_blank" title="instagram rydgel"></a>
+					<a role="instagram" 
+					href="http://statigr.am/rydgel" target="_blank" 
+					title="instagram rydgel"></a>
 				</li>
 				<li>
-					<a role="flickr" href="http://flickr.com/rydgel" target="_blank" title="flickr rydgel"></a>
+					<a role="flickr" 
+					href="http://flickr.com/rydgel" target="_blank" 
+					title="flickr rydgel"></a>
 				</li>
 				<li>
-					<a role="mail" href="mailto:rydgel@phollow.fr" target="_blank" title="email rydgel"></a>
+					<a role="mail" 
+					href="mailto:rydgel@phollow.fr" target="_blank" 
+					title="email rydgel"></a>
 				</li>
 			</ul>
 		</aside>
@@ -148,7 +219,7 @@
 	  			<li><a href="http://phollow.fr">Blog</a></li>
 	  			<li>
 					<a href="http://twitter.com/phollow">
-					Follow me {% if nb_followers %}&mdash; {{nb_followers|number_format}}{% endif %}
+Follow me {% if nb_followers %}&mdash; {{nb_followers|number_format}}{% endif %}
 					</a>
 				</li>
 	  		</ul>
@@ -156,8 +227,8 @@
 	  	<p>© 2012 Jérôme Mahuet, built with love.</p>
 	  </section>
 	  <section role="logo" class="four columns">
-		<img src="{{ url_for('static', filename='images/CSS3_Logo_50.png') }}" alt="CSS">
-		<img src="{{ url_for('static', filename='images/HTML5_Logo_50.png') }}" alt="HTML5">
+<img src="{{ url_for('static', filename='images/CSS3_Logo_50.png') }}" alt="CSS">
+<img src="{{ url_for('static', filename='images/HTML5_Logo_50.png') }}" alt="HTML5">
 	  </section>
 	</footer>
 	
