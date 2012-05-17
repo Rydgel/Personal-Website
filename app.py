@@ -77,4 +77,3 @@ def number_format(number):
 if os.environ.get('SENTRY_DSN') is not None:
     app.config['SENTRY_DSN'] = os.environ.get('SENTRY_DSN')
     sentry = Sentry(app)
-
