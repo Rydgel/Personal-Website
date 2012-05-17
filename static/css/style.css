@@ -15,7 +15,8 @@ dl,
 span,
 img,
 footer,
-figcaption {
+figcaption,
+cite {
   opacity: 1;
   -webkit-transition: opacity 0.24s ease-in-out;
   -moz-transition: opacity 0.24s ease-in-out;
@@ -39,7 +40,8 @@ figcaption {
 .wf-loading dl,
 .wf-loading img,
 .wf-loading footer,
-.wf-loading figcaption {
+.wf-loading figcaption,
+.wf-loading cite {
   text-rendering: optimizeSpeed;
   opacity: 0;
 }
@@ -58,7 +60,8 @@ figcaption {
 .ie.wf-loading dl,
 .ie.wf-loading img,
 .ie.wf-loading footer,
-.ie.wf-loading figcaption {
+.ie.wf-loading figcaption,
+.ie.wf-loading cite {
   visibility: hidden;
 }
 

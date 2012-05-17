@@ -73,20 +73,20 @@ def number_format(number):
     return format_decimal(number, locale='en_US')
 
 
-if __name__ == '__main__':
+#if __name__ == '__main__':
     # app.debug = True
     # Gzipping, not worth it on my free Heroku cedar
     # Cloudflare will do it for me.
     # app.wsgi_app = Gzipper(app.wsgi_app, compresslevel=6)
-    port = int(os.environ.get('PORT', 5000))
-    # logging
-    if not app.debug:
-        handler = logging.StreamHandler(sys.stdout)
-        handler.setLevel(logging.WARNING)
-        app.logger.addHandler(handler)
-        # Sentry
-        if os.environ.get('SENTRY_DSN') is not None:
-            app.config['SENTRY_DSN'] = os.environ.get('SENTRY_DSN')
-            sentry = Sentry(app)
+# port = int(os.environ.get('PORT', 5000))
+# logging
+if not app.debug:
+    handler = logging.StreamHandler(sys.stdout)
+    handler.setLevel(logging.WARNING)
+    app.logger.addHandler(handler)
+    # Sentry
+    if os.environ.get('SENTRY_DSN') is not None:
+        app.config['SENTRY_DSN'] = os.environ.get('SENTRY_DSN')
+        sentry = Sentry(app)
 
-    app.run(host='0.0.0.0', port=port)
+#app.run(host='0.0.0.0', port=port)
