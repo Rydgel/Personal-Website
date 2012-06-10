@@ -456,6 +456,9 @@ section[role="logo"] img {
 	border: 1px solid rgba(0, 0, 0, 0.3);
 }
 
+section[role=thumb] img {
+	margin-bottom: 20px;
+}
 
 /* #Media Queries
 ================================================== */

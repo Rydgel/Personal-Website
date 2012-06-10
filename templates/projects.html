@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}Jérôme Mahuet’s projects{% endblock %}
+{% block content %}
+<article role="projects-list">
+	<h2>Fake images please?</h2>
+	<section role="thumb" class="ten columns alpha">
+<img class="me" src="{{ url_for('static', filename='images/Fake-images-please.jpg') }}" alt="fake images please">
+	</section>
+	<section role="desc" class="six columns omega">
+<p>
+When designing websites, you may not have the images you need at first.
+But you already know the sizes and inserting some placeholders can help
+you better seeing the layout. Don’t waste your time making dummy images
+for your mockup or wireframe. 
+<a target="_blank" href="http://fakeimg.pl">Fakeimg.pl</a> 
+is a little tool that generates images with an URL. Choose the size, the colors, 
+even the text. It’s free and
+<a target="_blank" href="https://github.com/Rydgel/Fake-images-please">
+open-source</a>.
+</p>
+	</section>
+	
+<article>
+{% endblock %}

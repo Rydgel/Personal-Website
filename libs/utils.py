@@ -36,7 +36,7 @@ def getTwitterNbFollowers(pseudo):
 def getDribbbleShots(pseudo, count=1):
     """Retrieve last Dribbble shots, then again memcache its ass off"""
     try:
-        url = 'http://api.dribbble.com/players/' + pseudo + '/shots'
+        url = 'http://api.dribbble.com/players/%s/shots' % pseudo
         result = json.loads(urllib2.urlopen(url).read())
         return result['shots'][:count]
 

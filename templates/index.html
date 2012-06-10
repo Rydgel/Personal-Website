@@ -1,66 +1,6 @@
-<!doctype html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"><![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-
-	<title>Jérôme Mahuet</title>
-	<meta name="description" content="My name is Jérôme Mahuet, I am a twenty-five year-old developer.">
-	<meta name="author" content="Jérôme Mahuet">
-	<meta name="google-site-verification" content="KPTwyDiLP2gAGP1U-jTyHS0qFUhCmEbPIjmiNlUF-zU">
-	<meta name="viewport" content="width=device-width">
-
-	<link rel="stylesheet" href="{{ url_for('static', filename='css/style.min.css') }}">
-
-	<script src="{{ url_for('static', filename='js/libs/modernizr.min.js') }}"></script>
-</head>
-<body>
-<!--[if lt IE 7]>
-<p class=chromeframe>Your browser is <em>ancient!</em> 
-	<a href="http://browsehappy.com/">Upgrade to a newer browser</a> or 
-	<a href="http://www.google.com/chromeframe/?redirect=true">
-		install Google Chrome Frame
-	</a> to experience this site.
-</p>
-<![endif]-->
-<div class="container" role="wrapper">
-	<header class="container" role="main-header">
-		<h1 class="two columns">
-			<a href="/" title="Jérôme Mahuet">
-				<img src="{{ url_for('static', filename='images/logo.png') }}" alt="Jérôme Mahuet">
-			</a>
-		</h1>
-		<div class="five columns top">
-			<p>Jérôme Mahuet —<br>
-			hack <em>&amp;</em> design <em>since</em> 1986</p>
-		</div>
-		<nav role="main-navigation" class="five columns">
-	    	<ul>
-				<li>
-					<a href="http://phollow.fr" title="blog">
-						<span class="icon icon-blog"></span>
-						<span>Blog</span>
-					</a>
-				</li>
-				<li>
-					<a href="javascript:void(0);" title="Projects" class="disabled">
-						<span class="icon icon-projects"></span>
-						<span>Projects</span>
-					</a>
-			    </li>
-				<li>
-					<a href="/" title="About">
-						<span class="icon icon-about"></span>
-						<span>About</span>
-					</a>
-			    </li>
-			</ul>
-		</nav>
-	</header>
-	<section role="main" class="container">
+{% extends "layout.html" %}
+{% block title %}Jérôme Mahuet{% endblock %}
+{% block content %}
 		<article class="ten columns">
 			<h2 class="first-heading">About me</h2>
 			<img class="me" src="{{ url_for('static', filename='images/meh.png') }}" alt="Jérôme Mahuet">
@@ -153,13 +93,11 @@ take a look.
 				Body copy is the awesome <a 
 				href="http://www.fontshop.com/fonts/downloads/fontfont/ff_quadraat_web/" 
 				title="FF Quadraat Web">
-					FF Quadraat Web
-				</a> by 
+					FF Quadraat Web</a> by 
 				<a 
 					href="http://typedia.com/explore/designer/fred-smeijers/" 
 					title="Fred Smeijers">
-					Fred Smeijers
-				</a>.
+					Fred Smeijers</a>.
 			</p>
 			
 
@@ -204,47 +142,4 @@ take a look.
 				</li>
 			</ul>
 		</aside>
-	</section>
-	
-	<footer class="container" role="contentinfo">
-      <section role="footer-wrapper" class="twelve columns">
-	  <nav role="navigation">
-	  		<ul>
-	  			<li><a href="/">Home</a></li>
-	  			<li><a href="http://phollow.fr">Blog</a></li>
-	  			<li>
-					<a href="http://twitter.com/phollow">
-Follow me {% if nb_followers %}&mdash; {{nb_followers|number_format}}{% endif %}
-					</a>
-				</li>
-	  		</ul>
-	  	</nav>		
-	  	<p>© 2012 Jérôme Mahuet, built with love.</p>
-	  </section>
-	  <section role="logo" class="four columns">
-<img src="{{ url_for('static', filename='images/CSS3_Logo_50.png') }}" alt="CSS">
-<img src="{{ url_for('static', filename='images/HTML5_Logo_50.png') }}" alt="HTML5">
-	  </section>
-	</footer>
-	
-</div>
-
-<script src="http://use.typekit.com/ucx2ahr.js"></script>
-<script>try{Typekit.load();}catch(e){}</script>
-
-<script>
-  var _gauges = _gauges || [];
-  (function() {
-    var t   = document.createElement('script');
-    t.type  = 'text/javascript';
-    t.async = true;
-    t.id    = 'gauges-tracker';
-    t.setAttribute('data-site-id', '4f46125b613f5d3268000017');
-    t.src = '//secure.gaug.es/track.js';
-    var s = document.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(t, s);
-  })();
-</script>
-
-</body>
-</html>
+{% endblock %}

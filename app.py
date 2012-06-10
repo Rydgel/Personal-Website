@@ -6,7 +6,6 @@ import logging
 import sys
 from flask import Flask, render_template
 from raven.contrib.flask import Sentry
-#from middlewares.gzipper import Gzipper
 from babel.numbers import format_decimal
 from libs.utils import getRSS, getTwitterNbFollowers, getDribbbleShots
 from libs.decorators import minified, cached
@@ -16,15 +15,19 @@ app = Flask(__name__)
 
 
 @app.route('/')
-#@cached(60, 'index')
-#@minified
 def index():
     """Main page"""
     entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')
     nb_followers = getTwitterNbFollowers('phollow')
     dribbble_shots = getDribbbleShots('phollow')
-
     return render_template('index.html', **locals())
+
+
+@app.route('/projects')
+def projects():
+    """Projects page"""
+    nb_followers = getTwitterNbFollowers('phollow')
+    return render_template('projects.html', **locals())
 
 
 @app.route('/favicon.ico')
@@ -36,7 +39,7 @@ def favicon():
 @app.route('/apple-touch-icon<format>.png')
 def apple_touch(format=""):
     """Shitty logo Apple"""
-    file = 'apple-touch-icon' + format + '.png'
+    file = 'apple-touch-icon%s.png' % format
     return app.send_static_file(file)
 
 
