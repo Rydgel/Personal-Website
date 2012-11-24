@@ -67,7 +67,7 @@ def add_header(response):
     """
     response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
     response.headers['Cache-Control'] = 'public, max-age=300'
-    #response.headers['Last-Modified'] = launch_date
+    response.headers['Last-Modified'] = launch_date
     return response
 
 
