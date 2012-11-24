@@ -1,0 +1,204 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "compass";
+@import "compass/reset";
+@import "base";
+@import "typo";
+@import "fonts";
+
+
+/* -------------------------------------------------------------------------*/
+/* Layout */
+
+html, body {
+    height: 100%;
+}
+
+img {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+}
+
+em {
+    font-style: italic;
+}
+
+strong {
+    font-weight: bold;
+}
+
+.clearfix {
+    clear: both;
+}
+
+a, a:visited {
+    text-decoration: none;
+    color: $hl-color;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+    position: relative;
+    top: 1px;
+}
+
+body {
+    color: $text-color;
+}
+
+header {
+    @include margin-leader(1);
+
+    .avatar img {
+        display: block;
+        margin: 0 auto;
+        width: 100px;
+        height: 100px;
+
+        @include at-breakpoint($break) {
+            width: 150px;
+            height: 150px;
+        }
+    }
+
+    .claim {
+        @include margin-leader(1);
+        h1, p {
+            text-align: center;
+        }
+
+        p.title {
+            @include margin-trailer(.4);
+        }
+
+        p.contact, p.contact a {
+            color: lighten($text-color, 40%);
+            @include margin-trailer(.6);
+        }
+    }
+}
+
+.container {
+    @include container;
+    @include at-breakpoint($break) {
+        @include container;
+    }
+}
+
+.desc {
+    @include span-columns(4, 4);
+    @include at-breakpoint($break) {
+        @include prefix(1);
+        @include span-columns(7, 9);
+    }
+    @include margin-trailer(2);
+}
+
+.skills, .projects {
+    clear: both;
+}
+
+.column {
+    @include span-columns(4, 4);
+    @include at-breakpoint($break) {
+        @include span-columns(3, 9);
+    }
+
+    &.omega {
+        @include at-breakpoint($break) {
+            @include span-columns(3 omega, 9);
+        }
+    }
+
+    p {
+        text-align: center;
+    }
+
+    @include at-breakpoint($break) {
+        @include margin-trailer(2);
+    }
+}
+
+.big-column {
+    position: relative;
+    @include span-columns(4, 4);
+    @include at-breakpoint($break) {
+        @include span-columns(4, 9);
+    }
+
+    p {
+        text-align: left;
+    }
+
+    &.omega {
+        @include at-breakpoint($break) {
+            @include span-columns(4 omega, 9);
+        }
+
+    }
+
+    @include at-breakpoint($break) {
+        @include margin-trailer(2);
+    }
+
+    .wrapper {
+        @include margin-trailer(1);
+    }
+
+    .wrapper p {
+        margin-bottom: 0;
+    }
+
+    li {
+        height: 30px;
+    }
+
+    li a {
+        color: lighten($text-color, 40%);
+    }
+
+    li .ss-social {
+        font-weight: bold;
+        color: lighten($text-color, 40%);
+        position: relative;
+        top: 3px;
+        margin-right: 10px;
+    }
+
+}
+
+.projects {
+    .screen {
+        display: block;
+        margin: 0 auto;
+        @include span-columns(4, 4);
+        @include at-breakpoint($break) {
+            @include span-columns(6, 9);
+        }
+        @include margin-trailer(1);
+    }
+
+    section {
+        @include margin-trailer(2);
+    }
+
+    p {
+        @include span-columns(4, 4);
+        @include at-breakpoint($break) {
+            @include span-columns(3 omega, 9);
+        }
+    }
+}
+
+footer {
+    @include padding-leader(1);
+    @include padding-trailer(1);
+    background: $hl-color;
+    color: $bg-color;
+    -webkit-font-smoothing: antialiased;
+}

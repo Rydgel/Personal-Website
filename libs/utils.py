@@ -1,7 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-import os
 from decorators import cached
 import simplejson as json
 import feedparser
@@ -14,7 +13,7 @@ def getRSS(blog_rss):
     try:
         return feedparser.parse(blog_rss).entries[:5]
 
-    except Exception, e:
+    except Exception:
         print "RSS Exception"
         return None
 
@@ -27,7 +26,7 @@ def getTwitterNbFollowers(pseudo):
         result = json.loads(urllib2.urlopen(url).read())
         return result['followers_count']
 
-    except Exception, e:
+    except Exception:
         print "Twitter Exception"
         return 0
 
@@ -40,6 +39,6 @@ def getDribbbleShots(pseudo, count=1):
         result = json.loads(urllib2.urlopen(url).read())
         return result['shots'][:count]
 
-    except Exception, e:
+    except Exception:
         print "Dribbble Exception"
         return None

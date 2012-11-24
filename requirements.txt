@@ -5,13 +5,13 @@ MarkupSafe==0.15
 PyRSS2Gen==1.0.0
 Pygments==1.5
 Werkzeug==0.8.3
-gunicorn==0.14.5
-gevent==0.13.7
+gunicorn==0.16.1
+gevent==0.13.8
 feedparser==5.1.2
 pylibmc==1.2.3
 simplejson==2.6.0
 nose==1.1.2
 django-htmlmin==0.5.2
-raven==1.9.4
+raven==2.0.10
 blinker==1.2
-tornado==2.3
+tornado==2.4

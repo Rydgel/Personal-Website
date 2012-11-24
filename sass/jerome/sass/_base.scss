@@ -1,0 +1,20 @@
+// ---------------------------------------------------------------------------
+// Imports
+
+@import "susy";
+
+// ---------------------------------------------------------------------------
+// Basic Grid
+
+$total-columns  : 4;
+$column-width   : 4em;
+$gutter-width   : 2em;
+$grid-padding   : $gutter-width;
+
+
+$show-grid-backgrounds  : false;
+$break: 40em 9 lt-ie9;
+
+$bg-color: #fff;
+$text-color: #6a6663;
+$hl-color: #E14B2F;

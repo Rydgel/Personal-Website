@@ -1,145 +1,151 @@
 {% extends "layout.html" %}
 {% block title %}Jérôme Mahuet{% endblock %}
 {% block content %}
-		<article class="ten columns">
-			<h2 class="first-heading">About me</h2>
-			<img class="me" src="{{ url_for('static', filename='images/meh.png') }}" alt="Jérôme Mahuet">
-			<p>My name is <strong>Jérôme Mahuet</strong>, I am a twenty-six 
-				year-old developer with sharp design sensibilities. I sit on the
-				 fence of both worlds. I’m the kind of guy who learns everything
-				  by himself, and each project is a way to push further my 
-				  knowledge. I’m currently living in Limoges, France. 
-				  When offline I like photography, reading and playing video 
-				  games. What a <strong>nerd</strong> indeed.<br>
-				  Oh… and I <em>hate</em> when a designer put Lobster everywhere.
-			</p>
+<div class="container">
+    <div class="desc">
+        <h2>Web <em>&amp;</em> iPhone developer with a soft spot for good typography and responsive design</h2>
+    </div>
+</div>
 
-			<h2>Skills</h2>
-			<p>
-			<h6>HTML5 / CSS3 / Javascript</h6>
-			<span class="progress-bar blue stripes">
-				<span style="width: 90%"></span>
-			</span>
-			<h6>PHP</h6>
-			<span class="progress-bar blue stripes">
-				<span style="width: 100%"></span>
-			</span>
-			<h6>Python</h6>
-			<span class="progress-bar blue stripes">
-				<span style="width: 80%"></span>
-			</span>
-			<h6>Ruby</h6>
-			<span class="progress-bar blue stripes">
-				<span style="width: 60%"></span>
-			</span>
-			<h6>Objective-C</h6>
-			<span class="progress-bar blue stripes">
-				<span style="width: 80%"></span>
-			</span>
-			<h6>Photoshop</h6>
-			<span class="progress-bar blue stripes">
-				<span style="width: 60%"></span>
-			</span>
-			</p>
-			
-			{% if entries %}
-			<h2>Latest articles</h2>
-			<p>I also write <em>often</em> about developer topics on my 
-				personal web blog. Actually <em>mostly</em> about developer 
-				stuff… There is also some typographical goodness in it. 
-				But be warned, this is written in French.
-			</p>
-			<ul role="articles-list">
-			{% for entry in entries %}
-			  <li>
-			  	<a target="_blank" 
-			  	title="{{ entry.title }}" 
-			  	href="{{ entry.feedburner_origlink }}">
-			  		{{ entry.title }}
-			  	</a>
-			  </li>
-			{% endfor %}
-			</ul>
-			{% endif %}
-		</article>
-		<aside class="six columns">
-			<h5>About this website</h5>
-			<p>
-This site was made on a <a href="http://www.apple.com" title="Apple">Mac</a>, 
-designed in browser and 
-<a href="http://www.adobe.com/" title="Photoshop">Photoshop</a> 
-(for the fancy logos). Responsive theme by yours truly. Versioned with 
-<a href="http://git-scm.com/" title="Git">Git</a>. 
-It is powered by <a href="http://python.org/" title="Python">Python</a> and the 
-<a href="http://flask.pocoo.org/" title="Flask">Flask</a> micro-framework. 
-Edited with <a href="http://macromates.com/" title="TextMate">TextMate 2</a>. 
-The source code is hosted on 
-<a href="https://github.com/Rydgel/Personal-Website" title="Github">Github</a>, 
-take a look.
-			</p>
+<div class="container">
+    <div class="skills">
+        <section class="column">
+            <span class="ss-desktop"></span>
+            <p>
+                <strong>Web Developer</strong><br>
+                <span class="text">Backend and frontend developer, I’m coding most of the time with <a href="http://www.python.org/">Python</a> or PHP. <a href="http://backbonejs.org/">Backbone</a> <em>&amp;</em> <a href="http://sass-lang.com/">SASS</a> are tools I use a lot when it comes to frontend development.</span>
+            </p>
+        </section>
+        <section class="column">
+            <span class="ss-screwdrivermobile"></span>
+            <p>
+                <strong>Mobile</strong><br>
+                <span class="text">Responsive Design is now mandatory and it’s not so hard with the right tools. The right way is to code <a href="http://www.abookapart.com/products/mobile-first">mobile first</a>. I also developed a couple of iPhone native app.</span>
+            </p>
+        </section>
+        <section class="column omega">
+            <span class="ss-flask"></span>
+            <p>
+                <strong>Self-taught</strong><br>
+                <span class="text">I’m always learning new stuff to stay up to date. I’m currently playing with <a href="http://www.haskell.org/haskellwiki/Haskell">Haskell</a> <em>&amp;</em> <a href="http://clojure.org/">Clojure</a> to learn functional programming and <a href="http://golang.org/">Go</a> to build concurrent programs.</span>
+            </p>
+        </section>
+    </div>
+</div>
 
-			<h5>Hosting</h5>
-			<p>
-				Everything is hosted painlessly on a cloud platform called 
-				<a href="http://www.heroku.com/" title="Heroku">Heroku</a> 
-				(pronounced her-OH-koo). It’s a fun way of building and 
-				deploying web apps.
-			</p>
+<div class="container">
+    <section role="skills" class="big-column">
+        <span class="ss-bullseye"></span>
+        <h4>Skills</h4>
+        <div class="wrapper">
+            <ul>
+                <li>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    &nbsp;
+                    HTML5 / CSS3 / JS
+                </li>
+                <li>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    &nbsp;
+                    PHP
+                </li>
+                <li>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    &nbsp;
+                    Python
+                </li>
+                <li>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star"></span>
+                    <span class="ss-star"></span>
+                    &nbsp;
+                    Ruby
+                </li>
+                <li>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star red"></span>
+                    <span class="ss-star"></span>
+                    <span class="ss-star"></span>
+                    &nbsp;
+                    Objective-C
+                </li>
+            </ul>
+        </div>
+    </section>
+    <section role="social" class="big-column omega">
+        <span class="ss-link"></span>
+        <h4>Social</h4>
+        <div class="wrapper">
+            <ul>
+                <li><span class="ss-social ss-twitter"></span> <a href="http://twitter.com/phollow">twitter.com/phollow</a></li>
+                <li><span class="ss-social ss-octocat"></span> <a href="http://github.com/Rydgel">github.com/Rydgel</a></li>
+                <li><span class="ss-social ss-facebook"></span> <a href="http://facebook.com/rydgel">facebook.com/rydgel</a></li>
+                <li><span class="ss-social ss-dribbble"></span> <a href="http://dribbble.com/phollow">dribbble.com/phollow</a></li>
+                <li><span class="ss-social ss-instagram"></span> <a href="http://statigr.am/rydgel">statigr.am/rydgel</a></li>
+            </ul>
+        </div>
+    </section>
+    <div class="clear"></div>
+    <section role="technology" class="big-column">
+        <span class="ss-testtube"></span>
+        <h4>Technology</h4>
+        <div class="wrapper">
+            <p>
+                This site was made on a <a href="http://www.apple.com/">Mac</a>, designed in browser. Responsive theme by yours truly. Versioned with <a href="http://git-scm.com/">Git</a>. It’s powered by <a href="http://python.org/">Python</a> and the <a href="http://flask.pocoo.org/">Flask</a> micro-framework. Edited with <a href="http://www.vim.org/">Vim</a>. The source code is hosted on <a href="https://github.com/Rydgel/Personal-Website">Github</a>.
+            </p>
+        </div>
+    </section>
+    <section role="blog" class="big-column omega">
+        <span class="ss-spiralbound"></span>
+        <h4>Blogging</h4>
+        <div class="wrapper">
+            <p>
+                I also write <em>often</em> about developer topics on my personal web <a href="http://phollow.fr">blog</a>. Actually <em>mostly</em> about developer stuff… There is also some typographical goodness in it.
+                {% if entries %}
+                The latest post is:<br>
+                {% set entry = entries[0] %}
+                <a title="{{ entry.title }}" href="{{ entry.feedburner_origlink }}">{{ entry.title }}</a>
+                {% endif %}
+            </p>
+        </div>
+    </section>
+</div>
 
-			<h5>Fonts</h5>
-			<p>
-				All fonts are served up by the wonderful 
-				<a href="http://typekit.com/" title="Typekit">Typekit</a>. 
-				Body copy is the awesome <a 
-				href="http://www.fontshop.com/fonts/downloads/fontfont/ff_quadraat_web/" 
-				title="FF Quadraat Web">
-					FF Quadraat Web</a> by 
-				<a 
-					href="http://typedia.com/explore/designer/fred-smeijers/" 
-					title="Fred Smeijers">
-					Fred Smeijers</a>.
-			</p>
-			
+<div id="projects" class="projects">
+        <div class="container">
+        <span class="ss-trophy"></span>
+        <h3>Projects</h3>
+        <section role="fakeimg">
+            <img class="screen" src="{{ url_for('static', filename='images/fakeimg.png') }}">
+            <p>
+                When designing websites, you may not have the images you need at first. But you already know the sizes and inserting some placeholders can help you better seeing the layout. Don’t waste your time making dummy images for your mockup or wireframe. <a href="http://fakeimg.pl">Fakeimg.pl</a> is a little tool that generates images with an URL. Choose the size, the colors, even the text. It’s free and <a href="https://github.com/Rydgel/Fake-images-please">open-source</a>.
+            </p>
+            <div class="clearfix"></div>
+        </section>
 
-			{% if dribbble_shots %}
-			<h5>Latest Dribbble shot</h5>
-			<section role="dribbble-wrapper" class="clearfix">
-				{% for dribbble_shot in dribbble_shots %}
-					<a target="_blank" href="{{ dribbble_shot.url }}" title="{{ dribbble_shot.title }}">
-						<img class="dribbble-shot" 
-						src="{{ dribbble_shot.image_teaser_url }}" 
-						alt="{{ dribbble_shot.title }}">
-					</a>
-				{% endfor %}
-			</section>
-			{% endif %}
-			<h5>Social <em>&amp;</em> contact links</h5>
-			<ul role="social-links">
-				<li>
-					<a role="twitter" 
-					href="http://twitter.com/phollow" target="_blank" 
-					title="@phollow"></a>
-				</li>
-				<li>
-					<a role="dribbble" 
-					href="http://dribbble.com/phollow" target="_blank" 
-					title="@phollow"></a>
-				</li>
-				<li>
-					<a role="facebook" 
-					href="http://facebook.com/rydgel" target="_blank" 
-					title="rydgel"></a>
-				</li>
-				<li>
-					<a role="instagram" 
-					href="http://statigr.am/rydgel" target="_blank" 
-					title="instagram rydgel"></a>
-				</li>
-				<li>
-					<a role="flickr" 
-					href="http://flickr.com/rydgel" target="_blank" 
-					title="flickr rydgel"></a>
-				</li>
-			</ul>
-		</aside>
+        <section role="phollowme">
+            <img class="screen" src="{{ url_for('static', filename='images/phollowme.png') }}">
+            <p>
+                My personal web blog.<br><a href="http://phollow.fr">phollow.fr</a>
+            </p>
+            <div class="clearfix"></div>
+        </section>
+
+    </div>
+</div>
 {% endblock %}
