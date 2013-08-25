@@ -24,9 +24,9 @@ def cached(timeout, cache_key):
     otherwise execute dat parent function and put it into the cache. umad
     """
     mc = pylibmc.Client(
-        servers=[os.environ.get('MEMCACHE_SERVERS', '127.0.0.1')],
-        username=os.environ.get('MEMCACHE_USERNAME', None),
-        password=os.environ.get('MEMCACHE_PASSWORD', None),
+        servers=[os.environ.get('MEMCACHIER_SERVERS', '127.0.0.1')],
+        username=os.environ.get('MEMCACHIER_USERNAME', None),
+        password=os.environ.get('MEMCACHIER_PASSWORD', None),
         binary=True
     )
 
