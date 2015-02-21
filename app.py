@@ -17,7 +17,7 @@ launch_date = datetime.datetime.now()
 @app.route('/')
 def index():
     """Main page"""
-    entries = getRSS('http://feeds2.feedburner.com/phollow/iuEO')
+    entries = getRSS('http://phollow.fr/atom.xml')
     return render_template('index.html', entries=entries)
 
 
